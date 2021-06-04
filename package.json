@@ -1,0 +1,16 @@
+{
+  "name": "porfolio",
+  "version": "1.0.0",
+  "description": "pudu87's portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass --watch dist/styles/scss -o dist/styles"
+  },
+  "author": "pudu87",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  }
+}
