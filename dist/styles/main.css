@@ -1,0 +1,21 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle, #05023d, #010114); }
+
+* {
+  box-sizing: content-box;
+  color: white; }
+
+nav {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: right; }
+  nav span {
+    margin-right: 30px; }
+  nav i {
+    font-size: 30px; }
+  nav i:hover {
+    cursor: pointer;
+    transform: scale(1.2); }
