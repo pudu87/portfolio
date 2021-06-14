@@ -40,6 +40,56 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/img/battleship.png":
+/*!********************************!*\
+  !*** ./src/img/battleship.png ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"39416b2b41d89178ae54.png\";\n\n//# sourceURL=webpack://porfolio/./src/img/battleship.png?");
+
+/***/ }),
+
+/***/ "./src/img/chess.png":
+/*!***************************!*\
+  !*** ./src/img/chess.png ***!
+  \***************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"3888f87f1d1cceb5dfa3.png\";\n\n//# sourceURL=webpack://porfolio/./src/img/chess.png?");
+
+/***/ }),
+
+/***/ "./src/img/macebook.png":
+/*!******************************!*\
+  !*** ./src/img/macebook.png ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"4b0d683b226833e81b4a.png\";\n\n//# sourceURL=webpack://porfolio/./src/img/macebook.png?");
+
+/***/ }),
+
+/***/ "./src/img/odin.svg":
+/*!**************************!*\
+  !*** ./src/img/odin.svg ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"991d749280cf85d37011.svg\";\n\n//# sourceURL=webpack://porfolio/./src/img/odin.svg?");
+
+/***/ }),
+
+/***/ "./src/img/wally.png":
+/*!***************************!*\
+  !*** ./src/img/wally.png ***!
+  \***************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"732cf2310def8a6fe759.png\";\n\n//# sourceURL=webpack://porfolio/./src/img/wally.png?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -66,7 +116,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst content = document.querySelector('#content');\n\nconst loadProjects = () => {\n  content.textContent = 'Projects';\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadProjects);\n\n\n//# sourceURL=webpack://porfolio/./src/projects.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _img_odin_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/odin.svg */ \"./src/img/odin.svg\");\n/* harmony import */ var _img_macebook_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/macebook.png */ \"./src/img/macebook.png\");\n/* harmony import */ var _img_wally_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/wally.png */ \"./src/img/wally.png\");\n/* harmony import */ var _img_battleship_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/battleship.png */ \"./src/img/battleship.png\");\n/* harmony import */ var _img_chess_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./img/chess.png */ \"./src/img/chess.png\");\n\n\n\n\n\n\nconst content = document.querySelector('#content');\n\nconst projects = [\n  {\n    title: 'Macebook',\n    description: 'A very medieval facebook clone.',\n    github: 'https://github.com/pudu87/macebook',\n    link: 'https://pudu87.github.io/macebook/',\n    screenshot: _img_macebook_png__WEBPACK_IMPORTED_MODULE_1__\n  },\n  {\n    title: 'Where is Wally',\n    description: \"He's hiding in the backend.\",\n    github: 'https://github.com/pudu87/where-is-wally',\n    link: 'https://guarded-crag-83910.herokuapp.com/',\n    screenshot: _img_wally_png__WEBPACK_IMPORTED_MODULE_2__\n  },\n  {\n    title: 'Battleship',\n    description: 'You sunk my battleship.',\n    github: 'https://github.com/pudu87/battleship',\n    link: 'https://pudu87.github.io/battleship/',\n    screenshot: _img_battleship_png__WEBPACK_IMPORTED_MODULE_3__\n  },\n  {\n    title: 'Chess Game',\n    description: 'Chess on command (line)',\n    github: 'https://github.com/pudu87/chess-game',\n    link: false,\n    screenshot: _img_chess_png__WEBPACK_IMPORTED_MODULE_4__\n  },\n  {\n    title: 'This Website',\n    description: \"I put some work into this thing. So yeah, it get's a place in this list.\",\n    github: 'https://github.com/pudu87/porfolio',\n    link: 'https://pudu87.github.io/portfolio/',\n    screenshot: false\n  }\n]\n\nconst loadHeader = () => {\n  const header = document.createElement('header');\n    const h2 = document.createElement('h2');\n    h2.textContent = 'Check out some of the stuff I made!';\n    const p1 = document.createElement('p');\n    p1.textContent = 'All of these projects are part of';\n    const div = loadOdin();\n    const p2 = document.createElement('p');\n    p2.textContent = 'So far I immersed myself into';\n    const p3 = document.createElement('p');\n    p3.textContent = \"Please help me immerse somewhat deeper. Or expand this list. It's all up to you here.\";\n  [h2, p1, div, p2, p3].forEach(element => {\n    header.append(element);\n  });\n  return header;\n}\n\nconst loadOdin = () => {\n  const div = document.createElement('div');\n    const img = document.createElement('img');\n    img.src = _img_odin_svg__WEBPACK_IMPORTED_MODULE_0__;\n    img.alt = 'Viking head';\n    const span = document.createElement('span');\n    span.textContent = 'The Odin Project';\n    div.append(img);\n    div.append(span);\n  return div;\n}\n\nconst loadProjectList = () => {\n  const ul = document.createElement('ul');\n  projects.forEach(project => {\n    ul.append(loadProject(project));\n  });\n  return ul;\n}\n\nconst loadProject = (project) => {\n  const li = document.createElement('li');\n    const title = document.createElement('h3');\n    title.textContent = project.title;\n    li.append(title);\n    const description = document.createElement('p');\n    description.textContent = project.description;\n    li.append(description);\n  li.classList.add('project');\n  return li;\n}\n\nconst loadProjects = () => {\n  content.append(loadHeader());\n  content.append(loadProjectList());\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadProjects);\n\n\n//# sourceURL=webpack://porfolio/./src/projects.js?");
 
 /***/ })
 
@@ -109,6 +159,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -123,6 +185,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/

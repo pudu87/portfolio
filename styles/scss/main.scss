@@ -26,3 +26,22 @@ nav {
     transform: scale(1.2);
   }
 }
+
+// CONTENT
+
+#content {
+  margin: 10px 3px;
+}
+
+// PROJECTS
+
+.project {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid rgb(69, 68, 116);
+  border-radius: 5px;
+  background-color: rgba(255,255,255,.99);
+  * {
+    color: rgb(149, 149, 158);
+  }
+}
