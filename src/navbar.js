@@ -42,6 +42,7 @@ const removeContent = () => {
 const addContent = (oldContent, newContent) => {
   loadContent['load' + capitalize(newContent)]();
   content.classList.replace(oldContent, newContent);
+  sessionStorage.setItem('tab', newContent);
 }
 
 const loadNavbar = () => {
