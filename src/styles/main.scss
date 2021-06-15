@@ -43,17 +43,22 @@ nav {
 div.projects {
   header {
     h2 {
-
+      font-size: 16px;
     }
     p {
       font-family: 'Source Code Pro';
     }
     div {
+      display: flex;
+      align-items: center;
       img {
-        max-height: 50px;
+        max-height: 40px;
+        margin-right: 10px;
       }
       span {
         font-family: Norse;
+        font-size: 20px;
+        color: #ce973e;
       }
     }
   }
@@ -68,6 +73,10 @@ div.projects {
     background-color: rgba(255,255,255,.05);
     * {
       color: #fff;
+    }
+    img {
+      max-height: 50px;
+      max-width: 50px;
     }
   }
 }
