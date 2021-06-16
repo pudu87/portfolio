@@ -80,16 +80,6 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
-/***/ "./src/about.js":
-/*!**********************!*\
-  !*** ./src/about.js ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _img_manneken_pis_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/manneken-pis.jpg */ \"./src/img/manneken-pis.jpg\");\n/* harmony import */ var _img_santiago_jpeg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/santiago.jpeg */ \"./src/img/santiago.jpeg\");\n\n\n\nconst content = document.querySelector('#content');\n\nconst loadHeader = () => {\n  const header = document.createElement('header');\n    const p1 = document.createElement('p');\n    p1.textContent = \"I'm a Belgian\";\n    const img1 = document.createElement('img');\n    img1.src = _img_manneken_pis_jpg__WEBPACK_IMPORTED_MODULE_0__;\n    const p2 = document.createElement('p');\n    p2.textContent = \"Living in Chile\";\n    const img2 = document.createElement('img');\n    img2.src = _img_santiago_jpeg__WEBPACK_IMPORTED_MODULE_1__;\n    const p3 = document.createElement('p');\n    p3.textContent = 'Looking for a job or internship';\n  [p1, img1, p2, img2, p3].forEach(element => {\n    header.append(element);\n  });\n  return header;\n}\n\nconst loadPersonalData = () => {\n  const section = document.createElement('section');\n    const p1 = document.createElement('p');\n    p1.textContent = 'Click over here to find my CV';\n  section.append(p1);\n  return section;\n}\n\nconst loadAbout = () => {\n  content.append(loadHeader());\n  content.append(loadPersonalData());\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadAbout);\n\n\n//# sourceURL=webpack://porfolio/./src/about.js?");
-
-/***/ }),
-
 /***/ "./src/fonts/norse.bold.otf":
 /*!**********************************!*\
   !*** ./src/fonts/norse.bold.otf ***!
@@ -97,26 +87,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("module.exports = __webpack_require__.p + \"5efe60ef5042faec1224.otf\";\n\n//# sourceURL=webpack://porfolio/./src/fonts/norse.bold.otf?");
-
-/***/ }),
-
-/***/ "./src/helpers.js":
-/*!************************!*\
-  !*** ./src/helpers.js ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"capitalize\": () => (/* binding */ capitalize)\n/* harmony export */ });\nfunction capitalize(string) {\n  return string && string[0].toUpperCase() + string.slice(1);\n}\n\n\n\n\n//# sourceURL=webpack://porfolio/./src/helpers.js?");
-
-/***/ }),
-
-/***/ "./src/home.js":
-/*!*********************!*\
-  !*** ./src/home.js ***!
-  \*********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst content = document.querySelector('#content');\n\nconst loadHome = () => {\n  content.textContent = 'Home';\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadHome);\n\n\n//# sourceURL=webpack://porfolio/./src/home.js?");
 
 /***/ }),
 
@@ -190,33 +160,63 @@ eval("module.exports = __webpack_require__.p + \"732cf2310def8a6fe759.png\";\n\n
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_reset_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/reset.scss */ \"./src/styles/reset.scss\");\n/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.scss */ \"./src/styles/main.scss\");\n/* harmony import */ var _helpers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers.js */ \"./src/helpers.js\");\n/* harmony import */ var _navbar_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./navbar.js */ \"./src/navbar.js\");\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home.js */ \"./src/home.js\");\n/* harmony import */ var _projects_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./projects.js */ \"./src/projects.js\");\n/* harmony import */ var _about_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./about.js */ \"./src/about.js\");\n\n\n\n\n\n\n\n\nconst content = document.querySelector('#content');\nconst loadContent = {\n  loadHome: _home_js__WEBPACK_IMPORTED_MODULE_4__.default,\n  loadProjects: _projects_js__WEBPACK_IMPORTED_MODULE_5__.default,\n  loadAbout: _about_js__WEBPACK_IMPORTED_MODULE_6__.default\n};\n\n(function initialize() {\n  (0,_navbar_js__WEBPACK_IMPORTED_MODULE_3__.default)();\n  const tab = sessionStorage.getItem('tab');\n  if (tab) {\n    loadContent['load' + (0,_helpers_js__WEBPACK_IMPORTED_MODULE_2__.capitalize)(tab)]();\n    content.classList.add(tab);\n  } else {\n    (0,_home_js__WEBPACK_IMPORTED_MODULE_4__.default)();\n    content.classList.add('home');\n  }\n})()\n\n\n//# sourceURL=webpack://porfolio/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/navbar.js":
-/*!***********************!*\
-  !*** ./src/navbar.js ***!
-  \***********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _helpers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers.js */ \"./src/helpers.js\");\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.js */ \"./src/home.js\");\n/* harmony import */ var _projects_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./projects.js */ \"./src/projects.js\");\n/* harmony import */ var _about_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./about.js */ \"./src/about.js\");\n\n\n\n\n\nconst nav = document.querySelector('#nav');\nconst content = document.querySelector('#content');\n\nconst loadContent = {\n  loadHome: _home_js__WEBPACK_IMPORTED_MODULE_1__.default,\n  loadProjects: _projects_js__WEBPACK_IMPORTED_MODULE_2__.default,\n  loadAbout: _about_js__WEBPACK_IMPORTED_MODULE_3__.default\n};\nconst links = [\n  {\n    name: 'home',\n    fa: 'home'\n  },\n  {\n    name: 'projects',\n    fa: 'laptop-code'\n  },\n  {\n    name: 'about',\n    fa: 'address-card'\n  }\n];\n\nconst selectLink = (e) => {\n  const oldContent = content.classList[0];\n  const newContent = e.target.classList[0];\n  if (oldContent !== newContent) {\n    removeContent();\n    addContent(oldContent, newContent);\n  }\n}\n\nconst removeContent = () => {\n  content.textContent = '';\n}\n\nconst addContent = (oldContent, newContent) => {\n  loadContent['load' + (0,_helpers_js__WEBPACK_IMPORTED_MODULE_0__.capitalize)(newContent)]();\n  content.classList.replace(oldContent, newContent);\n  sessionStorage.setItem('tab', newContent);\n}\n\nconst loadNavbar = () => {\n  links.forEach(link => {\n    const span = document.createElement('span');\n    const i = document.createElement('i');\n    i.classList.add(link.name, 'fas', `fa-${link.fa}`);\n    i.addEventListener('click', selectLink);\n    span.appendChild(i);\n    nav.appendChild(span);\n  });\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadNavbar);\n\n\n//# sourceURL=webpack://porfolio/./src/navbar.js?");
-
-/***/ }),
-
-/***/ "./src/projects.js":
+/***/ "./src/js/about.js":
 /*!*************************!*\
-  !*** ./src/projects.js ***!
+  !*** ./src/js/about.js ***!
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _img_odin_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/odin.svg */ \"./src/img/odin.svg\");\n/* harmony import */ var _img_macebook_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/macebook.png */ \"./src/img/macebook.png\");\n/* harmony import */ var _img_wally_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/wally.png */ \"./src/img/wally.png\");\n/* harmony import */ var _img_battleship_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/battleship.png */ \"./src/img/battleship.png\");\n/* harmony import */ var _img_chess_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./img/chess.png */ \"./src/img/chess.png\");\n\n\n\n\n\n\nconst content = document.querySelector('#content');\n\nconst projects = [\n  {\n    title: 'Macebook',\n    description: 'A very medieval facebook clone.',\n    github: 'https://github.com/pudu87/macebook',\n    link: 'https://pudu87.github.io/macebook/',\n    screenshot: _img_macebook_png__WEBPACK_IMPORTED_MODULE_1__\n  },\n  {\n    title: 'Where is Wally?',\n    description: \"He's hiding in the backend.\",\n    github: 'https://github.com/pudu87/where-is-wally',\n    link: 'https://guarded-crag-83910.herokuapp.com/',\n    screenshot: _img_wally_png__WEBPACK_IMPORTED_MODULE_2__\n  },\n  {\n    title: 'Battleship',\n    description: 'You sunk my battleship.',\n    github: 'https://github.com/pudu87/battleship',\n    link: 'https://pudu87.github.io/battleship/',\n    screenshot: _img_battleship_png__WEBPACK_IMPORTED_MODULE_3__\n  },\n  {\n    title: 'Chess Game',\n    description: 'Chess on command (line)',\n    github: 'https://github.com/pudu87/chess-game',\n    link: false,\n    screenshot: _img_chess_png__WEBPACK_IMPORTED_MODULE_4__\n  },\n  {\n    title: 'This Website',\n    description: \"I put some work into this thing. So yeah, it get's a place in this list.\",\n    github: 'https://github.com/pudu87/porfolio',\n    link: 'https://pudu87.github.io/portfolio/',\n    screenshot: false\n  }\n]\n\nconst loadHeader = () => {\n  const header = document.createElement('header');\n    const h2 = document.createElement('h2');\n    h2.textContent = 'Check out some of the stuff I made!';\n    const p1 = document.createElement('p');\n    p1.textContent = 'All of these projects are part of';\n    const div = loadOdin();\n    const p2 = document.createElement('p');\n    p2.textContent = 'So far I immersed myself into';\n    const p3 = document.createElement('p');\n    p3.textContent = \"Please help me immerse somewhat deeper. Or expand this list. It's all up to you here.\";\n  [h2, p1, div, p2, p3].forEach(element => {\n    header.append(element);\n  });\n  return header;\n}\n\nconst loadOdin = () => {\n  const div = document.createElement('div');\n    const img = document.createElement('img');\n    img.src = _img_odin_svg__WEBPACK_IMPORTED_MODULE_0__;\n    img.alt = 'Viking head';\n    const span = document.createElement('span');\n    span.textContent = 'The Odin Project';\n    div.append(img);\n    div.append(span);\n  return div;\n}\n\nconst loadProjectList = () => {\n  const ul = document.createElement('ul');\n  projects.forEach(project => {\n    ul.append(loadProject(project));\n  });\n  return ul;\n}\n\nconst loadProject = (project) => {\n  const li = document.createElement('li');\n    const title = document.createElement('h3');\n    title.textContent = project.title;\n    li.append(title);\n    const description = document.createElement('p');\n    description.textContent = project.description;\n    li.append(description);\n    const github = document.createElement('a');\n    github.textContent = 'githublink';\n    github.href = project.github;\n    li.append(github);\n    if (project.link) {\n      const link = document.createElement('a');\n      link.textContent = 'link';\n      link.href = project.github;\n      li.append(link);\n    }\n    if (project.screenshot) {\n      const screenshot = document.createElement('img');\n      screenshot.src = project.screenshot;\n      li.append(screenshot);\n    }\n  li.classList.add('project');\n  return li;\n}\n\nconst loadProjects = () => {\n  content.append(loadHeader());\n  content.append(loadProjectList());\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadProjects);\n\n\n//# sourceURL=webpack://porfolio/./src/projects.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _img_manneken_pis_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../img/manneken-pis.jpg */ \"./src/img/manneken-pis.jpg\");\n/* harmony import */ var _img_santiago_jpeg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/santiago.jpeg */ \"./src/img/santiago.jpeg\");\n\n\n\nconst content = document.querySelector('#content');\n\nconst loadHeader = () => {\n  const header = document.createElement('header');\n    const p1 = document.createElement('p');\n    p1.textContent = \"I'm a Belgian\";\n    const img1 = document.createElement('img');\n    img1.src = _img_manneken_pis_jpg__WEBPACK_IMPORTED_MODULE_0__;\n    const p2 = document.createElement('p');\n    p2.textContent = \"Living in Chile\";\n    const img2 = document.createElement('img');\n    img2.src = _img_santiago_jpeg__WEBPACK_IMPORTED_MODULE_1__;\n    const p3 = document.createElement('p');\n    p3.textContent = 'Looking for a job or internship';\n  [p1, img1, p2, img2, p3].forEach(element => {\n    header.append(element);\n  });\n  return header;\n}\n\nconst loadPersonalData = () => {\n  const section = document.createElement('section');\n    const p1 = document.createElement('p');\n    p1.textContent = 'Click over here to find my CV';\n  section.append(p1);\n  return section;\n}\n\nconst loadAbout = () => {\n  content.append(loadHeader());\n  content.append(loadPersonalData());\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadAbout);\n\n\n//# sourceURL=webpack://porfolio/./src/js/about.js?");
+
+/***/ }),
+
+/***/ "./src/js/helpers.js":
+/*!***************************!*\
+  !*** ./src/js/helpers.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"capitalize\": () => (/* binding */ capitalize)\n/* harmony export */ });\nfunction capitalize(string) {\n  return string && string[0].toUpperCase() + string.slice(1);\n}\n\n\n\n\n//# sourceURL=webpack://porfolio/./src/js/helpers.js?");
+
+/***/ }),
+
+/***/ "./src/js/home.js":
+/*!************************!*\
+  !*** ./src/js/home.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst content = document.querySelector('#content');\n\nconst loadHome = () => {\n  content.textContent = 'Home';\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadHome);\n\n\n//# sourceURL=webpack://porfolio/./src/js/home.js?");
+
+/***/ }),
+
+/***/ "./src/js/index.js":
+/*!*************************!*\
+  !*** ./src/js/index.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_reset_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/reset.scss */ \"./src/styles/reset.scss\");\n/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/main.scss */ \"./src/styles/main.scss\");\n/* harmony import */ var _helpers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers.js */ \"./src/js/helpers.js\");\n/* harmony import */ var _navbar_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./navbar.js */ \"./src/js/navbar.js\");\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home.js */ \"./src/js/home.js\");\n/* harmony import */ var _projects_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./projects.js */ \"./src/js/projects.js\");\n/* harmony import */ var _about_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./about.js */ \"./src/js/about.js\");\n\n\n\n\n\n\n\n\nconst content = document.querySelector('#content');\nconst loadContent = {\n  loadHome: _home_js__WEBPACK_IMPORTED_MODULE_4__.default,\n  loadProjects: _projects_js__WEBPACK_IMPORTED_MODULE_5__.default,\n  loadAbout: _about_js__WEBPACK_IMPORTED_MODULE_6__.default\n};\n\n(function initialize() {\n  (0,_navbar_js__WEBPACK_IMPORTED_MODULE_3__.default)();\n  const tab = sessionStorage.getItem('tab');\n  if (tab) {\n    loadContent['load' + (0,_helpers_js__WEBPACK_IMPORTED_MODULE_2__.capitalize)(tab)]();\n    content.classList.add(tab);\n  } else {\n    (0,_home_js__WEBPACK_IMPORTED_MODULE_4__.default)();\n    content.classList.add('home');\n  }\n})()\n\n\n//# sourceURL=webpack://porfolio/./src/js/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/navbar.js":
+/*!**************************!*\
+  !*** ./src/js/navbar.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _helpers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers.js */ \"./src/js/helpers.js\");\n/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.js */ \"./src/js/home.js\");\n/* harmony import */ var _projects_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./projects.js */ \"./src/js/projects.js\");\n/* harmony import */ var _about_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./about.js */ \"./src/js/about.js\");\n\n\n\n\n\nconst nav = document.querySelector('#nav');\nconst content = document.querySelector('#content');\n\nconst loadContent = {\n  loadHome: _home_js__WEBPACK_IMPORTED_MODULE_1__.default,\n  loadProjects: _projects_js__WEBPACK_IMPORTED_MODULE_2__.default,\n  loadAbout: _about_js__WEBPACK_IMPORTED_MODULE_3__.default\n};\nconst links = [\n  {\n    name: 'home',\n    fa: 'home'\n  },\n  {\n    name: 'projects',\n    fa: 'laptop-code'\n  },\n  {\n    name: 'about',\n    fa: 'address-card'\n  }\n];\n\nconst selectLink = (e) => {\n  const oldContent = content.classList[0];\n  const newContent = e.target.classList[0];\n  if (oldContent !== newContent) {\n    removeContent();\n    addContent(oldContent, newContent);\n  }\n}\n\nconst removeContent = () => {\n  content.textContent = '';\n}\n\nconst addContent = (oldContent, newContent) => {\n  loadContent['load' + (0,_helpers_js__WEBPACK_IMPORTED_MODULE_0__.capitalize)(newContent)]();\n  content.classList.replace(oldContent, newContent);\n  sessionStorage.setItem('tab', newContent);\n}\n\nconst loadNavbar = () => {\n  links.forEach(link => {\n    const span = document.createElement('span');\n    const i = document.createElement('i');\n    i.classList.add(link.name, 'fas', `fa-${link.fa}`);\n    i.addEventListener('click', selectLink);\n    span.appendChild(i);\n    nav.appendChild(span);\n  });\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadNavbar);\n\n\n//# sourceURL=webpack://porfolio/./src/js/navbar.js?");
+
+/***/ }),
+
+/***/ "./src/js/projects.js":
+/*!****************************!*\
+  !*** ./src/js/projects.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _img_odin_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../img/odin.svg */ \"./src/img/odin.svg\");\n/* harmony import */ var _img_macebook_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/macebook.png */ \"./src/img/macebook.png\");\n/* harmony import */ var _img_wally_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../img/wally.png */ \"./src/img/wally.png\");\n/* harmony import */ var _img_battleship_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../img/battleship.png */ \"./src/img/battleship.png\");\n/* harmony import */ var _img_chess_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../img/chess.png */ \"./src/img/chess.png\");\n\n\n\n\n\n\nconst content = document.querySelector('#content');\n\nconst projects = [\n  {\n    title: 'Macebook',\n    description: 'A very medieval facebook clone.',\n    github: 'https://github.com/pudu87/macebook',\n    link: 'https://pudu87.github.io/macebook/',\n    screenshot: _img_macebook_png__WEBPACK_IMPORTED_MODULE_1__\n  },\n  {\n    title: 'Where is Wally?',\n    description: \"He's hiding in the backend.\",\n    github: 'https://github.com/pudu87/where-is-wally',\n    link: 'https://guarded-crag-83910.herokuapp.com/',\n    screenshot: _img_wally_png__WEBPACK_IMPORTED_MODULE_2__\n  },\n  {\n    title: 'Battleship',\n    description: 'You sunk my battleship.',\n    github: 'https://github.com/pudu87/battleship',\n    link: 'https://pudu87.github.io/battleship/',\n    screenshot: _img_battleship_png__WEBPACK_IMPORTED_MODULE_3__\n  },\n  {\n    title: 'Chess Game',\n    description: 'Chess on command (line)',\n    github: 'https://github.com/pudu87/chess-game',\n    link: false,\n    screenshot: _img_chess_png__WEBPACK_IMPORTED_MODULE_4__\n  },\n  {\n    title: 'This Website',\n    description: \"I put some work into this thing. So yeah, it get's a place in this list.\",\n    github: 'https://github.com/pudu87/porfolio',\n    link: 'https://pudu87.github.io/portfolio/',\n    screenshot: false\n  }\n]\n\nconst loadHeader = () => {\n  const header = document.createElement('header');\n    const h2 = document.createElement('h2');\n    h2.textContent = 'Check out some of the stuff I made!';\n    const p1 = document.createElement('p');\n    p1.textContent = 'All of these projects are part of';\n    const div = loadOdin();\n    const p2 = document.createElement('p');\n    p2.textContent = 'So far I immersed myself into';\n    const p3 = document.createElement('p');\n    p3.textContent = \"Please help me immerse somewhat deeper. Or expand this list. It's all up to you here.\";\n  [h2, p1, div, p2, p3].forEach(element => {\n    header.append(element);\n  });\n  return header;\n}\n\nconst loadOdin = () => {\n  const div = document.createElement('div');\n    const img = document.createElement('img');\n    img.src = _img_odin_svg__WEBPACK_IMPORTED_MODULE_0__;\n    img.alt = 'Viking head';\n    const span = document.createElement('span');\n    span.textContent = 'The Odin Project';\n    div.append(img);\n    div.append(span);\n  return div;\n}\n\nconst loadProjectList = () => {\n  const ul = document.createElement('ul');\n  projects.forEach(project => {\n    ul.append(loadProject(project));\n  });\n  return ul;\n}\n\nconst loadProject = (project) => {\n  const li = document.createElement('li');\n    const title = document.createElement('h3');\n    title.textContent = project.title;\n    li.append(title);\n    const description = document.createElement('p');\n    description.textContent = project.description;\n    li.append(description);\n    const github = document.createElement('a');\n    github.textContent = 'githublink';\n    github.href = project.github;\n    li.append(github);\n    if (project.link) {\n      const link = document.createElement('a');\n      link.textContent = 'link';\n      link.href = project.github;\n      li.append(link);\n    }\n    if (project.screenshot) {\n      const screenshot = document.createElement('img');\n      screenshot.src = project.screenshot;\n      li.append(screenshot);\n    }\n  li.classList.add('project');\n  return li;\n}\n\nconst loadProjects = () => {\n  content.append(loadHeader());\n  content.append(loadProjectList());\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadProjects);\n\n\n//# sourceURL=webpack://porfolio/./src/js/projects.js?");
 
 /***/ })
 
@@ -324,7 +324,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/index.js");
 /******/ 	
 /******/ })()
 ;
