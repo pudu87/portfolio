@@ -1,5 +1,5 @@
-import mannekenpis from './img/manneken-pis.jpg'
-import santiago from './img/santiago.jpeg'
+import mannekenpis from '../img/manneken-pis.jpg'
+import santiago from '../img/santiago.jpeg'
 
 const content = document.querySelector('#content');
 

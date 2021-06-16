@@ -1,5 +1,5 @@
-import './styles/reset.scss'
-import './styles/main.scss'
+import '../styles/reset.scss'
+import '../styles/main.scss'
 import { capitalize } from './helpers.js'
 import loadNavbar from './navbar.js'
 import loadHome from './home.js'

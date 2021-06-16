@@ -1,8 +1,8 @@
-import odin from './img/odin.svg'
-import macebook from './img/macebook.png'
-import wally from './img/wally.png'
-import battleship from './img/battleship.png'
-import chess from './img/chess.png'
+import odin from '../img/odin.svg'
+import macebook from '../img/macebook.png'
+import wally from '../img/wally.png'
+import battleship from '../img/battleship.png'
+import chess from '../img/chess.png'
 
 const content = document.querySelector('#content');
 
