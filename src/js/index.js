@@ -5,6 +5,7 @@ import loadNavbar from './navbar.js'
 import loadHome from './home.js'
 import loadProjects from './projects.js'
 import loadAbout from './about.js'
+import loadFooter from './footer.js'
 
 const content = document.querySelector('#content');
 const loadContent = {
@@ -23,4 +24,5 @@ const loadContent = {
     loadHome();
     content.classList.add('home');
   }
+  loadFooter();
 })()

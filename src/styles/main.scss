@@ -4,8 +4,10 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
   background: radial-gradient(circle, rgb(5, 2, 61),rgb(1, 1, 20));
 }
 * {
@@ -35,6 +37,7 @@ nav {
 // CONTENT
 
 #content {
+  flex: 1;
   margin: 10px 5px;
 }
 
@@ -88,5 +91,28 @@ div.about {
     img {
       width: 300px;
     }
+  }
+}
+
+// footer
+
+footer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    margin-right: 15px;
+    font-size: 11px;
+    span {
+      margin-left: 5px;
+      text-decoration: underline;
+    }
+  }
+  a {
+    font-size: 20px;
+  }
+  a:hover {
+    transform: scale(1.1);
   }
 }
