@@ -1,12 +1,14 @@
 import { capitalize } from './helpers.js'
+import loadHero from './hero.js'
 import loadHome from './home.js'
 import loadProjects from './projects.js'
 import loadAbout from './about.js'
 
 const nav = document.querySelector('#nav');
+const hero = document.querySelector('#hero');
 const content = document.querySelector('#content');
 
-const loadContent = {
+const contents = {
   loadHome,
   loadProjects,
   loadAbout
@@ -30,17 +32,19 @@ const selectLink = (e) => {
   const oldContent = content.classList[0];
   const newContent = e.target.classList[0];
   if (oldContent !== newContent) {
-    removeContent();
-    addContent(oldContent, newContent);
+    clearTab();
+    LoadTab(oldContent, newContent);
   }
 }
 
-const removeContent = () => {
+const clearTab = () => {
+  hero.textContent = '';
   content.textContent = '';
 }
 
-const addContent = (oldContent, newContent) => {
-  loadContent['load' + capitalize(newContent)]();
+const LoadTab = (oldContent, newContent) => {
+  loadHero();
+  contents['load' + capitalize(newContent)]();
   content.classList.replace(oldContent, newContent);
   sessionStorage.setItem('tab', newContent);
 }
