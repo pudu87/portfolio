@@ -28,7 +28,7 @@ const loadContent = () => {
 
 (function initialize() {
   loadNavbar();
-  loadHero();
+  loadHero('init');
   loadContent();
   loadFooter();
 })()
