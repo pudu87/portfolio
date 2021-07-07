@@ -48,14 +48,10 @@ const loadHeader = () => {
   const header = document.createElement('header');
     const h2 = document.createElement('h2');
     h2.textContent = 'Check out some of the stuff I made!';
-    const p1 = document.createElement('p');
-    p1.textContent = 'All of these projects are part of';
+    const p = document.createElement('p');
+    p.textContent = 'All of these projects are part of';
     const div = loadOdin();
-    const p2 = document.createElement('p');
-    p2.textContent = 'So far I immersed myself into';
-    const p3 = document.createElement('p');
-    p3.textContent = "Please help me immerse somewhat deeper. Or expand this list. It's all up to you here.";
-  [h2, p1, div, p2, p3].forEach(element => {
+  [h2, p, div].forEach(element => {
     header.append(element);
   });
   return header;
