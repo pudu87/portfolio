@@ -2,20 +2,37 @@ import mannekenpis from '../img/manneken-pis.jpg'
 import santiago from '../img/santiago.jpeg'
 
 const content = document.querySelector('#content');
+const headerParts = [
+  {
+    text: "I'm a Belgian 🇧🇪",
+    img: mannekenpis,
+    alt: 'Manneken Pis'
+  },
+  {
+    text: "Living in Chile 🇨🇱",
+    img: santiago,
+    alt: 'Santiago de Chile'
+  }
+];
+
+const loadPart = (part) => {
+  const article = document.createElement('article');
+    const p = document.createElement('p');
+    p.textContent = part.text;
+    const img = document.createElement('div');
+    img.style.backgroundImage = `url(${part.img})`;
+  [p, img].forEach(element => {
+    article.append(element);
+  });
+  return article;
+}
 
 const loadHeader = () => {
   const header = document.createElement('header');
-    const p1 = document.createElement('p');
-    p1.textContent = "I'm a Belgian 🇧🇪";
-    const img1 = document.createElement('img');
-    img1.src = mannekenpis;
-    const p2 = document.createElement('p');
-    p2.textContent = "Living in Chile 🇨🇱";
-    const img2 = document.createElement('img');
-    img2.src = santiago;
-  [p1, img1, p2, img2].forEach(element => {
-    header.append(element);
-  });
+    headerParts.forEach(part => {
+      const article = loadPart(part);
+      header.append(article);
+    });
   return header;
 }
 

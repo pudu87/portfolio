@@ -1,21 +1,23 @@
-import html from '../img/html-logo.svg'
-import css from '../img/css-logo.svg'
+const html = '<html/>';
+const css = '.css{}';
 import js from '../img/javascript-logo.png'
 import ruby from '../img/ruby-logo.svg'
-import rails from '../img/rails-logo.png'
 import react from '../img/react-logo.svg'
+import rails from '../img/rails-logo.png'
 
 const content = document.querySelector('#content');
 const skillData = [
   {
     name: 'languages',
     text: 'These are the languages I speak so far:',
-    icons: [html, css, js, ruby]
+    icon: 'fa-rocket',
+    logos: [html, css, js, ruby]
   },
   {
     name: 'frameworks',
     text: 'These are the frameworks I worked with so far:',
-    icons: [rails, react]
+    icon: 'fa-space-shuttle',
+    logos: [react, rails]
   }
 ];
 const invaderPixels = [
@@ -37,6 +39,46 @@ const invaderMoves = [
 ];
 const invaderDuration = 5000;
 
+// droppings
+
+const dropLogo = (list, logos, params, n = 0) => {
+  const li = document.createElement('li');
+  let logo;
+  if (logos[n].match(/[\.](png|svg)$/i)) { 
+    logo = document.createElement('img');
+    logo.src = logos[n];
+  } else {
+    logo = document.createElement('span');
+    logo.textContent = logos[n];
+  }
+  logo.classList.add('logo');
+  li.append(logo);
+  li.style.left = `${params.start + (n * params.space)}%`
+  list.append(li);
+  if (logos[n + 1]) {
+    setTimeout(
+      () => { dropLogo(list, logos, params, n + 1) },
+      params.interval
+    );
+  }
+}
+
+const dropLogos = (box, logos, widths) => {
+  const list = document.createElement('ul');
+  list.classList.add('logos');
+  box.append(list);
+  const space = widths.box < 500 ? 20 : 10;
+  const start = 50 - ((logos.length - 1) * space / 2);
+  const fraction = (widths.invader / widths.box) * invaderDuration;
+  const startTime = fraction + ((invaderDuration - 2 * fraction) * start / 100);
+  const interval = space * (invaderDuration - (2 * fraction)) / 100;
+  const params = { space, start, interval };
+  setTimeout( 
+    () => { dropLogo(list, logos, params) },
+    startTime
+  );
+}
+
 // spaceInvader
 
 const loadSpaceInvader = () => {
@@ -55,10 +97,10 @@ const loadSpaceInvader = () => {
   return invader;
 }
 
-const moveSpaceInvader = (invader) => {
+const moveSpaceInvader = (invader, widths) => {
   const invaderMoving = [
-    { transform: 'translateX(-100%)' },
-    { transform: 'translateX(100vw)' }
+    { transform: `translateX(-${widths.invader}%)` },
+    { transform: `translateX(${widths.box + widths.invader}px)` }
   ];
   const invaderTiming = {
     duration: invaderDuration,
@@ -87,32 +129,17 @@ const shakeSpaceInvader = () => {
   });
 }
 
-const dropSkills = (list, icons, n = 0) => {
-  const div = document.createElement('div');
-    const img = document.createElement('img');
-    img.src = icons[n];
-    img.classList.add('icon');
-    div.append(img);
-  div.style.width = `${100 / icons.length}%`
-  list.append(div);
-  if (icons[n + 1]) {
-    setTimeout(
-      () => { dropSkills(list, icons, n + 1)}, 
-      invaderDuration / icons.length
-    )
-  }
-}
-
-const getSpaceInvader = (skill, button, icons) => {
+const getSpaceInvader = (animationBox, i, logos) => {
   const invader = loadSpaceInvader();
-  const iconList = document.createElement('ul');
-  iconList.classList.add('icons');
-  skill.append(invader);
-  skill.append(iconList);
-  skill.removeChild(button);
-  moveSpaceInvader(invader);
+  animationBox.append(invader);
+  const widths = {
+    invader: invader.offsetWidth, 
+    box: invader.parentNode.offsetWidth
+  };
+  animationBox.removeChild(i);
+  moveSpaceInvader(invader, widths);
   shakeSpaceInvader();
-  dropSkills(iconList, icons);
+  dropLogos(animationBox, logos, widths);
 }
 
 // load-functions
@@ -138,10 +165,13 @@ const loadSkills = () => {
     article.classList.add(skill.name, 'skill');
       const h = document.createElement('h3');
       h.textContent = skill.text;
-      const button = document.createElement('button');
-      button.textContent = 'Show';
-      button.onclick = () => { getSpaceInvader(article, button, skill.icons) };
-    [h, button].forEach(element => {
+      const div = document.createElement('div');
+      div.classList.add('animationBox');
+      const i = document.createElement('i');
+      i.classList.add('fas', skill.icon);
+      i.onclick = () => { getSpaceInvader(div, i, skill.logos) };
+      div.append(i);
+    [h, div].forEach(element => {
       article.append(element);
     });
     skills.append(article);

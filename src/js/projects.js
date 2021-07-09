@@ -30,7 +30,7 @@ const projects = [
   },
   {
     title: 'Chess Game',
-    description: 'Chess on command (line)',
+    description: 'Chess on command (line).',
     github: 'https://github.com/pudu87/chess-game',
     link: false,
     screenshot: chess
@@ -58,15 +58,17 @@ const loadHeader = () => {
 }
 
 const loadOdin = () => {
-  const div = document.createElement('div');
+  const link = document.createElement('a');
+  link.href = 'https://www.theodinproject.com';
+  link.classList.add('odin-project')
     const img = document.createElement('img');
     img.src = odin;
     img.alt = 'Viking head';
     const span = document.createElement('span');
     span.textContent = 'The Odin Project';
-    div.append(img);
-    div.append(span);
-  return div;
+    link.append(img);
+    link.append(span);
+  return link;
 }
 
 const loadProjectList = () => {
@@ -79,26 +81,36 @@ const loadProjectList = () => {
 
 const loadProject = (project) => {
   const li = document.createElement('li');
-    const title = document.createElement('h3');
-    title.textContent = project.title;
-    li.append(title);
-    const description = document.createElement('p');
-    description.textContent = project.description;
-    li.append(description);
-    const github = document.createElement('a');
-    github.textContent = 'githublink';
-    github.href = project.github;
-    li.append(github);
+    const col1 = document.createElement('div');
+    col1.classList.add('col-1');
+      const title = document.createElement('h4');
+      title.textContent = project.title;
+      col1.append(title);
+      const description = document.createElement('p');
+      description.textContent = project.description;
+      col1.append(description);
+      const github = document.createElement('a');
+        const i = document.createElement('i');
+        i.classList.add('fab', 'fa-github');
+        github.append(i);
+      github.href = project.github;
+      col1.append(github);
     if (project.link) {
       const link = document.createElement('a');
-      link.textContent = 'link';
-      link.href = project.github;
-      li.append(link);
+        const i = document.createElement('i');
+        i.classList.add('fas', 'fa-link');
+        link.append(i);
+      link.href = project.link;
+      col1.append(link);
     }
+    li.append(col1);
     if (project.screenshot) {
-      const screenshot = document.createElement('img');
-      screenshot.src = project.screenshot;
-      li.append(screenshot);
+      const col2 = document.createElement('div');
+      col2.classList.add('col-2');
+        const screenshot = document.createElement('img');
+        screenshot.src = project.screenshot;
+      col2.append(screenshot);
+      li.append(col2);
     }
   li.classList.add('project');
   return li;
