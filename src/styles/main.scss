@@ -79,10 +79,17 @@ a {
 // NAVIGATION
 
 nav {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: right;
+  background-color: rgb(2, 1, 24);
+  border-bottom: 1px solid #333;
   span {
     margin-right: 30px;
   }
@@ -98,6 +105,7 @@ nav {
 // CONTAINER
 
 #container {
+  margin-top: 50px;
   position: relative;
   flex: 1;
 }
