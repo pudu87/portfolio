@@ -8,6 +8,7 @@ const loadFooter = () => {
     p.append(span);
   const link = document.createElement('a');
   link.href = 'https://github.com/pudu87';
+  link.target = '_blank';
     const i = document.createElement('i');
     i.classList.add('fab', 'fa-github');
     link.append(i);

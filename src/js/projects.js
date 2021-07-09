@@ -51,9 +51,7 @@ const loadHeader = () => {
     const p = document.createElement('p');
     p.textContent = 'All of these projects are part of';
     const div = loadOdin();
-  [h2, p, div].forEach(element => {
-    header.append(element);
-  });
+  [h2, p, div].forEach(element => header.append(element));
   return header;
 }
 
@@ -73,9 +71,7 @@ const loadOdin = () => {
 
 const loadProjectList = () => {
   const ul = document.createElement('ul');
-  projects.forEach(project => {
-    ul.append(loadProject(project));
-  });
+  projects.forEach(project => ul.append(loadProject(project)));
   return ul;
 }
 
@@ -94,6 +90,7 @@ const loadProject = (project) => {
         i.classList.add('fab', 'fa-github');
         github.append(i);
       github.href = project.github;
+      github.target = '_blank';
       col1.append(github);
     if (project.link) {
       const link = document.createElement('a');
@@ -101,6 +98,7 @@ const loadProject = (project) => {
         i.classList.add('fas', 'fa-link');
         link.append(i);
       link.href = project.link;
+      link.target = '_blank';
       col1.append(link);
     }
     li.append(col1);

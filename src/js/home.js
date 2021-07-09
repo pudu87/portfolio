@@ -152,9 +152,7 @@ const loadHeader = () => {
     p1.textContent = 'If you reached this page, you have been granted the unique opportunity to hire me.';
     const p2 = document.createElement('p');
     p2.textContent = 'I am an autodidact web developer, looking for a job or internship.';
-    [h, p1, p2].forEach(element => {
-      header.append(element);
-    });
+    [h, p1, p2].forEach(element => header.append(element));
   return header;
 }
 
@@ -171,9 +169,7 @@ const loadSkills = () => {
       i.classList.add('fas', skill.icon);
       i.onclick = () => { getSpaceInvader(div, i, skill.logos) };
       div.append(i);
-    [h, div].forEach(element => {
-      article.append(element);
-    });
+    [h, div].forEach(element => article.append(element));
     skills.append(article);
   });
   return skills;
