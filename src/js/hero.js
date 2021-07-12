@@ -1,6 +1,6 @@
 const hero = document.querySelector('#hero');
-const height = hero.clientHeight;
-const width = hero.clientWidth;
+let height;
+let width;
 
 // star-functions
 
@@ -143,6 +143,8 @@ const moveMeteor = () => {
 }
 
 const loadHero = (init) => {
+  width = hero.offsetWidth;
+  height = hero.offsetHeight;
   loadStars();
   loadMeteor();
   if (init) {

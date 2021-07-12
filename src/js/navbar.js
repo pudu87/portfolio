@@ -43,10 +43,10 @@ const clearTab = () => {
 }
 
 const LoadTab = (oldContent, newContent) => {
-  loadHero();
   contents['load' + capitalize(newContent)]();
   content.classList.replace(oldContent, newContent);
   sessionStorage.setItem('tab', newContent);
+  loadHero();
 }
 
 const loadNavbar = () => {

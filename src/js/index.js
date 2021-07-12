@@ -42,7 +42,7 @@ const loadContent = () => {
 
 (function initialize() {
   loadNavbar();
-  loadHero('init');
   loadContent();
+  loadHero('init');
   loadFooter();
 })()
