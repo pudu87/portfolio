@@ -3,8 +3,10 @@ import macebook from '../img/macebook.png'
 import wally from '../img/wally.png'
 import battleship from '../img/battleship.png'
 import chess from '../img/chess.png'
+import disableScroll from 'disable-scroll'
 
 const content = document.querySelector('#content');
+const body = document.querySelector('body');
 
 const projects = [
   {
@@ -42,7 +44,27 @@ const projects = [
     link: 'https://pudu87.github.io/portfolio/',
     screenshot: false
   }
-]
+];
+
+const removePopUp = (frame) => {
+  disableScroll.off();
+  frame.remove();
+}
+
+const addPopUp = (image) => {
+  disableScroll.on();
+  const frame = document.createElement('div');
+  frame.classList.add('frame');
+  frame.onclick = () => { removePopUp(frame); }
+  body.append(frame);
+    const img = document.createElement('img');
+    img.src = image;
+    img.style.maxHeight = `${frame.offsetHeight - 50}px`;
+    img.style.maxWidth = `${frame.offsetWidth -30}px`;
+    frame.append(img);
+}
+
+// loading functions
 
 const loadHeader = () => {
   const header = document.createElement('header');
@@ -107,6 +129,7 @@ const loadProject = (project) => {
       col2.classList.add('col-2');
         const screenshot = document.createElement('img');
         screenshot.src = project.screenshot;
+        screenshot.onclick = () => { addPopUp(project.screenshot) };
       col2.append(screenshot);
       li.append(col2);
     }
