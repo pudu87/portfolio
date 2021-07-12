@@ -15,6 +15,20 @@ const contents = {
   loadAbout
 };
 
+let resizeTimer = null;
+const resizeHero = (resizeTimer) => {
+  const hero = document.querySelector('#hero');
+  if (resizeTimer != null) {
+    window.clearTimeout(resizeTimer);
+  }
+  resizeTimer = window.setTimeout(() => {
+    hero.textContent = '';
+    console.log(hero);
+    loadHero('init');
+  }, 500);
+}
+window.onresize = () => { resizeHero(resizeTimer) };
+
 const loadContent = () => {
   const tab = sessionStorage.getItem('tab');
   if (tab) {

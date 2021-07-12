@@ -110,10 +110,12 @@ const moveSpaceInvader = (invader, widths) => {
   setTimeout(() => { invader.remove() }, 5000);
 }
 
-const shakeSpaceInvader = () => {
+const shakeSpaceInvader = (invader) => {
   invaderMoves.forEach(move => {
     const [y, x] = move[0];
-    const pixel = document.querySelector(`._${y}_${x}`);
+    const pixel = [...invader.childNodes].find(child => {
+      return [...child.classList].includes(`_${y}_${x}`);
+    });
     const invaderShaking = [
       { opacity: move[1] ? 0 : 1 },
       { opacity: move[1] ? 0 : 1, offset: .45 },
@@ -138,7 +140,7 @@ const getSpaceInvader = (animationBox, i, logos) => {
   };
   animationBox.removeChild(i);
   moveSpaceInvader(invader, widths);
-  shakeSpaceInvader();
+  shakeSpaceInvader(invader);
   dropLogos(animationBox, logos, widths);
 }
 
@@ -158,7 +160,7 @@ const loadHeader = () => {
 
 const loadSkills = () => {
   const skills = document.createElement('section');
-  skillData.forEach(skill => {
+  skillData.forEach((skill, index) => {
     const article = document.createElement('article');
     article.classList.add(skill.name, 'skill');
       const h = document.createElement('h3');
