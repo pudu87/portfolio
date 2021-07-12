@@ -67,7 +67,10 @@ const dropLogos = (box, logos, widths) => {
   const list = document.createElement('ul');
   list.classList.add('logos');
   box.append(list);
-  const space = widths.box < 500 ? 20 : 10;
+  console.log(widths);
+  // const space = widths.box < 500 ? 20 : 10;
+  // console.log(space);
+  const space = 20;
   const start = 50 - ((logos.length - 1) * space / 2);
   const fraction = (widths.invader / widths.box) * invaderDuration;
   const startTime = fraction + ((invaderDuration - 2 * fraction) * start / 100);
@@ -99,8 +102,10 @@ const loadSpaceInvader = () => {
 
 const moveSpaceInvader = (invader, widths) => {
   const invaderMoving = [
-    { transform: `translateX(-${widths.invader}%)` },
-    { transform: `translateX(${widths.box + widths.invader}px)` }
+    { opacity: 0, transform: `translateX(-${widths.invader}%)` },
+    { opacity: 1, offset: .15 },
+    { opacity: 1, offset: .85 },
+    { opacity: 0, transform: `translateX(${widths.box + widths.invader}px)` }
   ];
   const invaderTiming = {
     duration: invaderDuration,
