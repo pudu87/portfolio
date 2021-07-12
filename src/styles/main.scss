@@ -38,7 +38,7 @@ html {
 body {
   position: relative;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   font-size: 13px;
@@ -60,6 +60,7 @@ h3 {
 }
 h2,
 h3 {
+  padding: 0 5px;
   text-align: center;
 }
 h4 {
@@ -85,12 +86,17 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  height: 50px;
   display: flex;
-  align-items: center;
-  justify-content: right;
+  justify-content: center;
+  height: 50px;
   background-color: rgb(2, 1, 24);
   border-bottom: 1px solid #333;
+  .nav-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
   span {
     margin-right: 30px;
   }
@@ -109,6 +115,7 @@ nav {
   margin-top: 50px;
   position: relative;
   flex: 1;
+  display: flex;
 }
 
 // HERO
@@ -151,10 +158,16 @@ nav {
 // CONTENT
 
 #content {
-  margin: 10px 5px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 5px;
   font-family: Play;
+  background-color: rgba(255,255,255,.02);
   header {
     margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
   }
 }
 
@@ -241,7 +254,7 @@ div.home {
 div.projects {
   header {
     .odin-project {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       img {
         max-height: 40px;
@@ -257,9 +270,6 @@ div.projects {
       cursor: pointer;
       opacity: .8;
     }
-  }
-  ul {
-    margin: 0 10px;
   }
   .project {
     min-height: 120px;
@@ -315,6 +325,7 @@ div.about {
       justify-content: center;
       align-items: center;
       .img {
+        max-width: 250px;
         flex: 1;
         height: 90%;
         border-radius: 10px;
@@ -322,7 +333,7 @@ div.about {
         background-position: center;
       }
       .text {
-        width: 30%;
+        min-width: 30%;
         font-family: Play;
         font-size: 14px;
         text-align: left; 
@@ -369,5 +380,77 @@ footer {
   }
   a:hover {
     transform: scale(1.1);
+  }
+}
+
+// MEDIA QUERIES
+
+@media (min-width: 560px) {
+  h2 {
+    font-size: 2em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  h4 {
+    font-size: 1.3em;
+  }
+  p {
+    font-size: 1.1em;
+  }
+  .nav-container {
+    max-width: 500px;
+  }
+  #content {
+    width: 500px;
+  }
+  #content header {
+    margin-bottom: 60px;
+  }
+  div.projects header .odin-project {
+    img {
+      max-height: 60px;
+    }
+    span {
+      font-size: 25px;
+    }
+  }
+  .col-1 p {
+    margin-bottom: 20px;
+  }
+  div.projects .project .col-1 a i {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 2.2em;
+  }
+  h3 {
+    font-size: 1.6em;
+  }
+  h4 {
+    font-size: 1.4em;
+  }
+  p {
+    font-size: 1.2em;
+  }
+  .nav-container {
+    max-width: 650px;
+  }
+  #content {
+    width: 650px;
+  }
+  div.projects header .odin-project {
+    img {
+      max-height: 60px;
+    }
+    span {
+      font-size: 25px;
+    }
+  }
+  div.projects .project .col-1 a i {
+    font-size: 35px;
   }
 }

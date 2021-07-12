@@ -50,14 +50,17 @@ const LoadTab = (oldContent, newContent) => {
 }
 
 const loadNavbar = () => {
+  const navContainer = document.createElement('div');
+  navContainer.classList.add('nav-container');
   links.forEach(link => {
     const span = document.createElement('span');
     const i = document.createElement('i');
     i.classList.add(link.name, 'fas', `fa-${link.fa}`);
     i.addEventListener('click', selectLink);
     span.appendChild(i);
-    nav.appendChild(span);
+    navContainer.appendChild(span);
   });
+  nav.appendChild(navContainer);
 }
 
 export default loadNavbar
