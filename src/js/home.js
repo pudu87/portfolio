@@ -67,9 +67,6 @@ const dropLogos = (box, logos, widths) => {
   const list = document.createElement('ul');
   list.classList.add('logos');
   box.append(list);
-  console.log(widths);
-  // const space = widths.box < 500 ? 20 : 10;
-  // console.log(space);
   const space = 20;
   const start = 50 - ((logos.length - 1) * space / 2);
   const fraction = (widths.invader / widths.box) * invaderDuration;

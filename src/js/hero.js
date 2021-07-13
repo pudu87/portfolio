@@ -148,7 +148,7 @@ const loadHero = (init) => {
   loadStars();
   loadMeteor();
   if (init) {
-    // setTimeout(moveMeteor, 3000);
+    setTimeout(moveMeteor, 3000);
   }
 }
 

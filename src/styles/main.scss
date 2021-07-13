@@ -122,7 +122,7 @@ nav {
 
 #hero {
   position: absolute;
-  z-index: -1;
+  // z-index: -1;
   top: 0;
   bottom: 0;
   left: 0;
@@ -143,6 +143,7 @@ nav {
   }
   .meteor {
     position: absolute;
+    z-index: 55;
   }
   .meteorBody, .meteorTail {
     position: absolute;
@@ -151,13 +152,14 @@ nav {
     background-color: #fff;
   }
   .meteorTail {
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(255,255,255,.5);
   }
 }
 
 // CONTENT
 
 #content {
+  z-index: 1;
   margin-left: auto;
   margin-right: auto;
   padding: 10px 5px;
@@ -194,7 +196,7 @@ nav {
 
 div.home {
   .skill {
-    height: 120px;
+    height: 130px;
     display: flex;
     flex-direction: column;
     .animationBox {
