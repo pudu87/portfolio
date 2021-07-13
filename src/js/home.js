@@ -15,7 +15,7 @@ const skillData = [
   },
   {
     name: 'frameworks',
-    text: 'These are the frameworks I worked with so far:',
+    text: 'These are the frameworks I have worked with so far:',
     icon: 'fa-space-shuttle',
     logos: [react, rails]
   }

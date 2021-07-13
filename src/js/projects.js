@@ -39,7 +39,7 @@ const projects = [
   },
   {
     title: 'This Website',
-    description: "I put some work into this thing. So yeah, it get's a place in this list.",
+    description: "I put some work into this thing. So yeah, it gets a place in this list.",
     github: 'https://github.com/pudu87/porfolio',
     link: 'https://pudu87.github.io/portfolio/',
     screenshot: false
