@@ -146,6 +146,21 @@ const getSpaceInvader = (animationBox, i, logos) => {
   dropLogos(animationBox, logos, widths);
 }
 
+// skill-buttons animation
+
+const animateSkillButton = (i) => {
+  const skillAnimation = [
+    { transform: 'scale(1)' },
+    { transform: 'scale(1.2)', offset: .5 },
+    { transform: 'scale(1)' }
+  ];
+  const skillTiming = {
+    duration: 1500,
+    iterations: Infinity
+  };
+  i.animate(skillAnimation, skillTiming);
+}
+
 // load-functions
 
 const loadHeader = () => {
@@ -162,7 +177,7 @@ const loadHeader = () => {
 
 const loadSkills = () => {
   const skills = document.createElement('section');
-  skillData.forEach((skill, index) => {
+  skillData.forEach(skill => {
     const article = document.createElement('article');
     article.classList.add(skill.name, 'skill');
       const h = document.createElement('h3');
@@ -170,6 +185,7 @@ const loadSkills = () => {
       const div = document.createElement('div');
       div.classList.add('animationBox');
       const i = document.createElement('i');
+      animateSkillButton(i);
       i.classList.add('fas', skill.icon);
       i.onclick = () => { getSpaceInvader(div, i, skill.logos) };
       div.append(i);
